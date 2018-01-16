@@ -9,24 +9,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Insert title here</title>
+<link rel="StyleSheet" href="res/mc.css" type="text/css" title="cse4413" media="screen, print"/>
 </head>
 <body>
 	<form action="" method="GET">
 		<fieldset>
 			<legend>Student Loan Application</legend>
-			<label for="principal">Principal</label>
-			<input type="text" id="principal" name="principal" step="0.01"/><br/>
-			
-			<label for="interest">Annual Interest Rate</label>
-			<input type="text" id="interest" name="interest" step="0.01"/><br/>
-			
-			<label for="period">Payment Period</label>
-			<input type="text" id="period" name="period" step="1"/><br/>
-			
-			<label for="gracePeriod">Grace Period</label>
-			<input type="checkBox" id="gracePeriod" name="gracePeriod"/><br/>
-		
-			<input type="submit" value="Submit" name=""/>
+			<table>
+				<tr>
+					<td><label for="principal">Principal</label>
+						<p>(total loan amount after studies)</p>
+					</td>
+					<td><input type="text" id="principal" name="principal" step="0.01"/></td>
+				</tr>
+				
+				<tr>
+					<td><label for="interest">Annual Interest Rate</label></td>
+					<td><input type="text" id="interest" name="interest" step="0.01"/></td>
+				</tr>
+				
+				<tr>
+					<td><label for="period">Payment Period</label>
+						<p>(total number of months)</p>
+					</td>
+					<td><input type="text" id="period" name="period" step="1"/></td>
+				</tr>
+				
+				<tr>
+					<td><label for="gracePeriod">Grace Period</label>
+						<p>
+							(Take advantage of 6 month grace period and
+							include grace period interest with your loan
+							balance)
+						</p>
+					</td>
+					<td><input type="checkBox" id="gracePeriod" name="gracePeriod"/></td>
+				</tr>
+				
+				<tr>
+					<td><input type="submit" value="Submit" name="submit"/></td>
+				</tr>
+			</table>
 		</fieldset>
 	</form>
 </body>
