@@ -23,6 +23,7 @@ form {
 }
 p {
 	font-size: 12px;
+	padding: 0px;
 }
 tr, td {
 	padding: 10px;
