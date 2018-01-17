@@ -40,7 +40,7 @@ public class Start extends HttpServlet {
 				request.getRequestDispatcher(startPage).forward(request, response);
 			}
 			else { //restart has been pressed, return to start page with variables blank
-				response.sendRedirect(this.getServletContext().getContextPath() + startPage);
+				response.sendRedirect(this.getServletContext().getContextPath() + "/Start");
 			}
 		}
 		else {
