@@ -17,13 +17,13 @@
 		<legend>Student Loan Application</legend>
 			<table>
 				<tr>
-					<td><label for="gracePeriodInterest">Grace Period Interest:</label></td>
-					<td></td>
+					<td>Grace Period Interest:</td>
+					<td>$${requestScope['graceInterest']}</td>
 				</tr>
 				
 				<tr>
-					<td><label for="monthlyPayments">Monthly Payments:</label></td>
-					<td></td>
+					<td>Monthly Payments:</td>
+					<td>$${requestScope['monthlyPayments']}</td>
 				</tr>
 				
 				<tr>

@@ -19,6 +19,9 @@ public class Start extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public String startPage = "/UI.jspx";
     public String resultsPage = "/Result.jspx";
+    
+    private static final String MONTHLYPAY = "monthlyPayments";
+    private static final String GRACEINTEREST = "graceInterest";
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -65,14 +68,19 @@ public class Start extends HttpServlet {
 			double monthlyInt = ((fixedInterest + interest) / 12.0) * .01;
 			double monthlyPayments = monthlyInt * principal / (1 - Math.pow(1+monthlyInt, -period));
 			
+			graceInterest = 0.0;	 //grace interest is 0 by default
 			if (gracePeriodEnabled) {
 				graceInterest = principal * ((interest + fixedInterest) / 12.0) * gracePeriod;
 				monthlyPayments += (graceInterest / gracePeriod);
 			}
 			
 			DecimalFormat d = new DecimalFormat("##.0");
+			//System.out.println(graceInterest);
+			request.setAttribute(GRACEINTEREST, graceInterest);
+			request.setAttribute(MONTHLYPAY, d.format(monthlyPayments));
 			//p.flush();
 			//p.write("Monthly payments: " + d.format(monthlyPayments));
+			
 			
 			request.getRequestDispatcher(resultsPage).forward(request, response);
 		}
