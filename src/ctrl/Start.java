@@ -24,6 +24,30 @@ public class Start extends HttpServlet {
     private static final String GRACEINTEREST = "graceInterest";
 	
     /**
+     * It is awkward to intermix html and java code because it is hard to see the
+     * structure of the html when you are outputting it in java as well as violation
+     * of the separation principal.
+     */
+    
+    /**
+     * Mixing validation, payment computation and presentation violates the separation
+     * of concern principal since the calculation of values should be separated from
+     * the validation of user input and presentation of input as seen in the MVC design
+     * pattern. When mixing these three it not only creates uglier code but opens the 
+     * code up to bugs that can often be hard to fix when the code is not modularized.
+     */
+    
+    /**
+     * The content-length measures the size of the data in the body of the request/response
+     */
+    
+    /**
+     * GET should be used when only information from the server needs to be retrieved
+     * with no side effects while POST should be used when information needs to be 
+     * preserved and side effects are present.
+     */
+    
+    /**
      * @see HttpServlet#HttpServlet()
      */
     public Start() {
