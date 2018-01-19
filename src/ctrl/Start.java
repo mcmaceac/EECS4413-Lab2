@@ -70,7 +70,7 @@ public class Start extends HttpServlet {
 			
 			graceInterest = 0.0;	 //grace interest is 0 by default
 			if (gracePeriodEnabled) {
-				graceInterest = principal * ((interest + fixedInterest) / 12.0) * gracePeriod;
+				graceInterest = principal * monthlyInt * gracePeriod;
 				monthlyPayments += (graceInterest / gracePeriod);
 			}
 			
