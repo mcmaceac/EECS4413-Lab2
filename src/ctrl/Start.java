@@ -81,13 +81,13 @@ public class Start extends HttpServlet {
 			fixedInterest = Double.parseDouble(getServletContext().getInitParameter("fixedInterest"));
 			gracePeriod = Double.parseDouble(getServletContext().getInitParameter("gracePeriod"));
 			
-	
-			principal = (request.getParameter("principal") == null) ? principal : Double.parseDouble(request.getParameter("principal"));
-			period = (request.getParameter("period") == null) ? period : Double.parseDouble(request.getParameter("period"));
-			interest = (request.getParameter("interest") == null) ? interest : Double.parseDouble(request.getParameter("interest"));
+			
+			principal = (request.getParameter("principal").isEmpty()) ? principal : Double.parseDouble(request.getParameter("principal"));
+			period = (request.getParameter("period").isEmpty()) ? period : Double.parseDouble(request.getParameter("period"));
+			interest = (request.getParameter("interest").isEmpty()) ? interest : Double.parseDouble(request.getParameter("interest"));
 			
 			
-			Writer p = response.getWriter();
+			//Writer p = response.getWriter();
 			
 			double monthlyInt = ((fixedInterest + interest) / 12.0) * .01;
 			double monthlyPayments = monthlyInt * principal / (1 - Math.pow(1+monthlyInt, -period));
